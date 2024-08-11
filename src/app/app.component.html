@@ -1,0 +1,31 @@
+<!-- Home Layout -->
+
+<div class="w-full h-full">
+  <mat-tab-group>
+    <mat-tab label="All Users Workout List">
+      <div class="flex-col space-x-10 pt-6">
+        <!-- Component to add a new user and loading of users and progress chart -->
+        <app-add-user
+          (userAdded)="
+            usersComponent.loadUsers(); progressChartComponent.loadUsers()
+          "
+        ></app-add-user>
+        <!-- Display the list of users -->
+        <app-users #usersComponent></app-users>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Workout Progress">
+      <div class="flex-col space-x-10 pt-6">
+        <!-- Component to add a new user and loading of users and progress chart -->
+        <app-add-user
+          (userAdded)="
+            usersComponent.loadUsers(); progressChartComponent.loadUsers()
+          "
+        ></app-add-user>
+        <!-- Component to display the progress chart -->
+        <app-progress-chart #progressChartComponent></app-progress-chart>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>
